@@ -1,0 +1,84 @@
+<!doctype HTML>
+<html>
+<head> 
+    <title>Transaction History</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" shrink-to-fit="no" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap" rel="stylesheet"> 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    
+<body>
+    <?php
+    
+	$conn=mysqli_connect("localhost:3308", "root", "", "trans");
+
+	$query="SELECT * from transaction order by id asc";
+    $result=mysqli_query($conn,$query) or die(mysqli_error($conn));
+ 
+    
+    
+?>
+    
+    <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Sender </th>
+      <th scope="col">Receiver</th>
+      <th scope="col">Transfer Amount</th>
+    </tr>
+    <table>
+        <tr>
+            <td>1</td><tr>
+           <br><td>Ajay</td>
+            <td>ajay@gmail.com</td>
+            <td>3023</td>
+        </tr>
+    </table>
+   </thead>
+    <tbody>
+    <tr>
+        <?php 
+        $conn =mysqli_connect('localhost','root','', 'trans');
+        
+        while($row=mysqli_fetch_array($result))
+        {
+            $id=$row[0];
+             $send= $row[1];
+             $rec= $row[2];
+             $bal= $row[3];
+        }
+        ?>
+        <tbody>
+                <td><?php echo "{$id}"?></td>
+                <td><?php echo "{$send}"?></td>
+                <td><?php echo "{$rec}"?></td>
+                <td><?php echo "{$bal}"?></td>
+        </tr>
+       
+    
+        </tbody>
+    </table>
+    
+    
+    <div class="btn-group-justified">
+                <div class="text-center">
+                
+                    <button type="button" onclick="location.href='index.html'" class="btn btn-primary" class="mr-5 ">BACK</button>  
+                </div>
+            </div>
+    </body>
+</html>

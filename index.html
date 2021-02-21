@@ -1,0 +1,129 @@
+<!doctype HTML>
+<html>
+<head> 
+    <title>NIM's Bank</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" shrink-to-fit="no" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap" rel="stylesheet"> 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    
+<body>
+    
+    <div class="container-fluid banner">
+        <div class="row">
+            <!--Navbar-->
+            <div  class="col-md-12">
+				    <nav class="navbar navbar-md">
+                        <a class="navbar-brand"  href="index.html">HOME</a>
+				    </nav>
+			 </div>
+            <!--Image Slider-->
+    
+            
+            <!--Center Text-->
+                    <div class="col-md-8 offset-md-2 info">
+				        <h1 class="text-center">NIM's BANKING</h1>
+				            <p class="text-center">
+					           THE MOST TRUSTED BANK
+				            </p>
+            <!--BUTTONS-->
+            <div class="btn-group-justified">
+                <div class="text-center">
+                    <button type="button" onclick="location.href='viewcust.html'" class="btn btn-success" class="mr-5 "align="center" >VIEW CUSTOMERS</button>
+                
+                    <button type="button" class="btn btn-warning" class="mr-5 "align="center" data-target="#transfer" data-toggle="modal">TRANSFER MONEY</button> 
+        
+                    <button type="button" onclick="location.href='history.html'" class="btn btn-primary" class="mr-5 ">TRANSACTION HISTORY</button>  
+                </div>
+            </div>
+                        
+            </div>
+        </div>
+        
+        <!--Modal Make a Transaction  -->
+    <div class="modal fade" id="transfer" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Transfer Money</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="transfer.php"  method="POST" enctype="multipart/form-data">
+                    <div class="form-group col-md-6">  
+                        <label for="text">Sender</label>
+                        <select type="text" class="form-control" id="send" name="send" placeholder="Sender" required>
+                             <option value="null">--Select--</option>
+                             <option value="null">--Select--</option>
+                            <option value="Prerna ">Prerna </option>
+                            <option value="Guarav">Gaurav</option>
+                             <option value="Shristi">Shristi</option>
+                            <option value="Prem">Prem</option>
+                             <option value="Preeti">Preeti</option>
+                             <option value="Muskan">Muskan</option>
+                             <option value="Kritika">Kritika</option>
+                             <option value="Ajay">Ajay</option>
+                             <option value="Usha">Usha</option>
+                             <option value="Ritika">Ritika</option>
+                        </select>
+                        <label for="text">Amount</label>
+                        <input type="text" class="form-control" id="amt"  name="amt" placeholder="Amount">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="text">Receiver</label>
+                        <select type="text" class="form-control" id="rece"  name="rece" placeholder="Receiver" required>
+                             <option value="null">--Select--</option>
+                            <option value="Prerna ">Prerna </option>
+                            <option value="Guarav">Gaurav</option>
+                             <option value="Shristi">Shristi</option>
+                            <option value="Prem">Prem</option>
+                             <option value="Preeti">Preeti</option>
+                             <option value="Muskan">Muskan</option>
+                             <option value="Kritika">Kritika</option>
+                             <option value="Ajay">Ajay</option>
+                             <option value="Usha">Usha</option>
+                             <option value="Ritika">Ritika</option>
+                        </select>
+                    </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary"  data-toggle="modal" data-target="#success">Transfer</button>
+                </div>
+                    </form>
+                </div>
+           </div>
+        </div>
+    </div>
+        
+        <!--Transaction Successful-->
+        
+        <div class="modal fade" id="success" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                
+                <div class="modal-body">
+                    <h5>Transaction Successful.</h5>
+                    
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+    </div>
+</body>
+</html>
+                        
